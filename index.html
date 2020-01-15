@@ -5,9 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DreamFarmer</title>
+        <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h1>Hello!</h1>
 
+<body>
+    <div class="container">
+        <h1>DreamFarmer</h1>
+        <div id="new-cannabis_plant-container">
+            <form id="new-cannabis_plant-form">
+                <input type="text" />
+                <input type="submit" />
+            </form>
+        </div>
+        <div id="cannabis_plants-container">
+        </div>
+        <div>
+            <script src="src/components/cannabis_plants.js"></script>
+            <script src="src/components/app.js"></script>
+            <script src="src/adapters/CannabisPlantsAdapter.js"></script>
+            <script src="src/index.js"></script>
+        </div>
 </body>
 </html>
