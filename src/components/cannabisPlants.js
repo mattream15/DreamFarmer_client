@@ -8,11 +8,17 @@ class CannabisPlants {
 
     initBindingsAndEventListeners() {
         this.cannabisPlantsContainer = document.getElementById('cannabisPlants-container')
+        this.species = document.querySelector('species')
+        this.varietyName = document.querySelector('varietyName')
+        this.numberOfSeeds = document.querySelector('numberOfSeeds')
         this.newCannabisPlantSpecies = document.getElementById('new-cannabisPlant-species')
         this.newCannabisPlantVarietyName = document.getElementById('new-cannabisPlant-varietyName')
         this.newCannabisPlantNumberOfSeeds = document.getElementById('new-cannabisPlant-numberOfSeeds')
         this.cannabisPlantForm = document.getElementById('new-cannabisPlant-form')
         this.cannabisPlantForm.addEventListener('submit', this.createCannabisPlant.bind(this))
+        this.cannabisPlantsContainer.addEventListener('dblclick', this.handleCannabisPlantClick.bind
+        (this))
+        this.cannabisPlantsContainer.addEventListener('blur', this.updateCannabisPlant.bind(this), true)
     }
 
     createCannabisPlant(e) {
@@ -30,11 +36,31 @@ class CannabisPlants {
         })
     }
 
+    handleCannabisPlantClick(e) {
+        this.toggleCannabisPlant(e)
+    }
+
+    toggleCannabisPlant(e) {
+        const li = e.target
+        li.contentEditable = true
+        li.focus()
+        li.classList.add('editable')
+    }
+
+    updateCannabisPlant(e) {
+        const li = e.target
+        li.contentEditable = false
+        li.classList.remove('editable')
+        const newValue = li.innerHTML
+        const id = li.dataset.id
+        this.adapter.updateCannabisPlant(newValue, id)
+    }
+
     fetchAndLoadCannabisPlants() {
         this.adapter
         .getCannabisPlants()
         .then(cannabisPlants => {
-            cannabisPlants.forEach(cannabisPlant => this.cannabisPlants.push(new CannabisPlant(cannabisPlant)))
+            cannabisPlants.sort((a, b) => a.id - b.id).forEach(cannabisPlant => this.cannabisPlants.push(new CannabisPlant(cannabisPlant)))
         })
         .then(() => {
             this.render() 

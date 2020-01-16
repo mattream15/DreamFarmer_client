@@ -16,6 +16,25 @@ body {
         margin-top:50px;
     }
     
+    ul {
+        padding-left: 20px;
+    }
+
+    .delete-cannabisPlant-link {
+        color: red;
+    }
+
+    .editable {
+        border: 1px solid black;
+        padding: 20px;
+    }
+
+    #cannabisPlants-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 10px;
+    }
+
     #form{
     display: flex;
     flex-direction: column;

@@ -22,4 +22,19 @@ class CannabisPlantsAdapter {
             body: JSON.stringify({ cannabisPlant }),
         }).then(res => res.json())
     }
+
+    updateCannabisPlant(value1, value2, value3, id) {
+        const cannabisPlant = {
+            species: value1,
+            varietyName: value2,
+            numberOfSeeds: value3
+        }
+        return fetch(`${this.baseUrl}/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({ cannabisPlant }),
+        }).then(res => res.json())
+    }
 }
