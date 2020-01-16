@@ -4,26 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
     <title>DreamFarmer</title>
-        <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div class="container">
         <h1>DreamFarmer</h1>
-        <div id="new-cannabis_plant-container">
-            <form id="new-cannabis_plant-form">
-                <input type="text" />
-                <input type="submit" />
+    <div id="new-cannabisPlant-container">
+            <form id="new-cannabisPlant-form">
+                <input type="text" name="cannabisPlant-species" id="new-cannabisPlant-species">
+                <input type="text" name="cannabisPlant-varietyName" id="new-cannabisPlant-varietyName">
+                <input type="integer" name="cannabisPlant-numberOfSeeds" id="new-cannabisPlant-numberOfSeeds">
+                <input type="submit" value="Plant Seed(s)"/>
             </form>
         </div>
-        <div id="cannabis_plants-container">
-        </div>
-        <div>
-            <script src="src/components/cannabis_plants.js"></script>
-            <script src="src/components/app.js"></script>
+            <div id="cannabisPlants-content"></div>
+                    <ul id="cannabisPlants-container">
+
+                    </ul>
+                <div id="cannabisPlant-show">
+
+                </div>
             <script src="src/adapters/CannabisPlantsAdapter.js"></script>
+            <script src="src/components/cannabisPlant.js"></script>
+            <script src="src/components/cannabisPlants.js"></script>
+            <script src="src/components/app.js"></script>
             <script src="src/index.js"></script>
-        </div>
 </body>
 </html>
