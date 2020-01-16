@@ -1,9 +1,9 @@
-class CannabisPlants {
+class CloneRooms {
     constructor() {
         this.cloneRooms = []
         this.adapter = new CloneRoomsAdapter()
         this.initBindingsAndEventListeners()
-        this.fetchAndLoadCannabisPlants()
+        this.fetchAndLoadCloneRooms()
     }
 
     initBindingsAndEventListeners() {
@@ -21,9 +21,9 @@ class CannabisPlants {
     fetchAndLoadCloneRooms() {
         this.adapter
         .getCloneRooms()
-        .then(cloneRooms => {
-            cloneRooms.forEach(cloneRoom => this.cloneRooms.push(new CloneRoom(cloneRoom)))
-        })
+        //.then(cloneRooms => {
+         //   cloneRooms.sort((a, b) => a.id - b.id).forEach(cloneRoom => this.cloneRooms.push(new CloneRoom(cloneRoom)))
+        // })
         .then(() => {
             this.render() 
         })
