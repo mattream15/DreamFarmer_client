@@ -1,16 +1,16 @@
-class CloneRoom {
-    constructor(cloneRoomJSON) {
-        this.id = cloneRoomJSON.id
-        this.lightSource = cloneRoomJSON.lightSource
-        this.nutrient = cloneRoomJSON.nutrient
-        this.relativeHumidity = cloneRoomJSON.relativeHumidity
-        this.temperature = cloneRoomJSON.temperature
-        this.pH = cloneRoomJSON.pH
+class GrowRoom {
+    constructor(growRoomJSON) {
+        this.id = growRoomJSON.id
+        this.lightSource = growRoomJSON.lightSource
+        this.nutrient = growRoomJSON.nutrient
+        this.relativeHumidity = growRoomJSON.relativeHumidity
+        this.temperature = growRoomJSON.temperature
+        this.pH = growRoomJSON.pH
     }
 
     renderLi() {
       return `
-      <li data-id=${this.id}</li>
+      <li data-id=${this.id}></li>
       <li>Light Source: ${this.lightSource}</li>
       <li>Nutrient: ${this.nutrient}</li>
       <li>Relative Humidity: ${this.relativeHumidity}</li>

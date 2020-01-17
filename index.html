@@ -28,21 +28,31 @@
 
                 </div>
 
-                <div id="cloneRooms-content">
-                    <ul id="cloneRooms-container">
-
-                    </ul>
+                <div id="new-growRoom-container">
+                    <form id="new-growRoom-form">
+                        <input type="text" name="growRoom-lightSource" id="new-growRoom-lightSource">
+                        <input type="text" name="growRoom-nutrient" id="new-growRoom-nutrient">
+                        <input type="text" name="growRoom-relativeHumidity" id="new-growRoom-relativeHumidity">
+                        <input type="text" name="growRoom-temperature" id="new-growRoom-temperature">
+                        <input type="text" name="growRoom-pH" id="new-growRoom-pH">
+                        <input type="submit" value="Build Grow Room"/>
+                    </form>
                 </div>
-                <div id="cloneRoom-show">
-
-                </div>
+                    <div id="growRooms-content">
+                            <ul id="growRooms-container">
+        
+                            </ul>
+                    </div>
+                        <div id="growRoom-show">
+        
+                        </div>
     </div>
             <script src="src/adapters/CannabisPlantsAdapter.js"></script>
+            <script src="src/adapters/GrowRoomsAdapter.js"></script>
             <script src="src/components/cannabisPlant.js"></script>
             <script src="src/components/cannabisPlants.js"></script>
-            <script src="src/adapters/CloneRoomsAdapter.js"></script>
-            <script src="src/components/cloneRoom.js"></script>
-            <script src="src/components/cloneRooms.js"></script>
+            <script src="src/components/growRoom.js"></script>
+            <script src="src/components/growRooms.js"></script>
             <script src="src/components/app.js"></script>
             <script src="src/index.js"></script>
 </body>

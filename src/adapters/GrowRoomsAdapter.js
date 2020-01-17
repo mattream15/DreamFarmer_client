@@ -1,6 +1,6 @@
 class GrowRoomsAdapter {
     constructor() {
-        this.baseUrl = 'http:localhost:3000/api/v1/grow_rooms'
+        this.baseUrl = 'http://localhost:3000/api/v1/grow_rooms'
     }
 
     getGrowRooms() {
