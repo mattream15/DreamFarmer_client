@@ -15,8 +15,8 @@ class CannabisPlants {
         this.newCannabisPlantSpecies = document.getElementById('species')
         this.newCannabisPlantSpecies.addEventListener('change', this.handleSpeciesChange.bind(this))
         this.newCannabisPlantVarietyName = document.getElementById('varietyName')
-        this.newCannabisPlantNumberOfSeeds = document.getElementById('new-cannabisPlant-numberOfSeeds')
-        this.newCannabisPlantGrowRoomId = document.getElementById('new-cannabisPlant-growRoomId')
+        this.newCannabisPlantNumberOfSeeds = document.getElementById('numberOfSeeds')
+        this.newCannabisPlantGrowRoomId = document.getElementById('growRoomId')
         this.cannabisPlantForm = document.getElementById('new-cannabisPlant-form')
         this.cannabisPlantForm.addEventListener('submit', this.createCannabisPlant.bind(this))
         this.cannabisPlantsContainer.addEventListener('dblclick', this.handleCannabisPlantClick.bind
@@ -26,12 +26,19 @@ class CannabisPlants {
 
     handleSpeciesChange(e) {        
         if (e.target.value === 'Sativa') {
-            const sativaOptions = ['Sour Diesel', 'Casey Jones', 'Blue Dream']
+            const sativaOptions = ['Ghost Train Haze', 'Sour Diesel', 'Casey Jones', 'Blue Dream', 'Maui Wowie']
             const newOptions = sativaOptions.map(option => `<option>${option}</option>`)
+            this.newCannabisPlantVarietyName.innerHTML = newOptions.join('')
+        } else if (e.target.value === 'Indica') {
+            const indicaOptions = ['Strawberry Banana', 'Dark Star', 'Kosher Kush', 'Sunset Sherbert', 'Northern Lights']
+            const newOptions = indicaOptions.map(option => `<option>${option}</option>`)
+            this.newCannabisPlantVarietyName.innerHTML = newOptions.join('')
+        } else {
+            const hybridOptions = ['Cannatonic', 'Three Blue Kings', 'Larry Bird Kush', 'White Widow', 'Pineapple Express']
+            const newOptions = hybridOptions.map(option => `<option>${option}</option>`)
             this.newCannabisPlantVarietyName.innerHTML = newOptions.join('')
         }
     }
-
 
     createCannabisPlant(e) {
         e.preventDefault()

@@ -25,42 +25,37 @@
                 </div>
 
         <div id="new-cannabisPlant-container">
-            <form>
+            <form id='new-cannabisPlant-form'>                
                 <select id="species">
                     <option>Sativa</option>
                     <option>Indica</option>
                     <option>Hybrid</option>
                     </select>
-                    <p>Selected Species: <input type="text" id="selectedSpecies" size="20"></p>
                 
-                    <select id="varietyName">
-                        <option>Ghost Train Haze</option>
-                        <option>Sour Diesel</option>
-                        <option>Casey Jones</option>
-                        </select>
-                        <p>Selected Variety Name: <input type="text" id="selectedVarietyName" size="20"></p>
+                <select id="varietyName">
+                    <option>Ghost Train Haze</option>
+                    <option>Sour Diesel</option>
+                    <option>Casey Jones</option>
+                    </select>
                    
-                        <select id="numberOfSeeds" onchange="selectNumberOfSeeds()">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            </select>
-                            <p>Selected Number of Seeds: <input type="text" id="selectedNumberOfSeeds" size="20"></p>
+                <select id="numberOfSeeds">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                </select>
                        
-                            <select id="growRoom" onchange="selectGrowRoom()">
-                                <option>1</option>
-                                </select>
-                                <p>Selected Grow Room: <input type="text" id="selectedGrowRoom" size="20"></p>
-                            </form>
+                <select id="growRoom">
+                        <option>1</option>
+                </select>
                 <input type="submit" value="Plant Seed(s)"/>
             </form>
         </div>
@@ -78,7 +73,6 @@
             <script src="src/adapters/GrowRoomsAdapter.js"></script>
             <script src="src/components/cannabisPlant.js"></script>
             <script src="src/components/cannabisPlants.js"></script>
-            <script src="src/components/cannabisPlantForm.js"></script>
             <script src="src/components/growRoom.js"></script>
             <script src="src/components/growRooms.js"></script>
             <script src="src/components/app.js"></script>
