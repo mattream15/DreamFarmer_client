@@ -10,7 +10,7 @@ class GrowRoom {
 
     renderLi() {
       return `
-      <li data-id=${this.id}></li>
+      <li>Grow Room: ${this.id}</li>
       <li>Light Source: ${this.lightSource}</li>
       <li>Nutrient: ${this.nutrient}</li>
       <li>Relative Humidity: ${this.relativeHumidity}</li>

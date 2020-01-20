@@ -9,7 +9,7 @@ class CannabisPlant {
 
     renderLi() {
       return `
-      <li data-id=${this.id}</li>
+      <li>Cannabis Plant: ${this.id}</li>
       <li>Type: ${this.species}</li>
       <li>Variety Name: ${this.varietyName}</li>
       <li>Number of Seeds: ${this.numberOfSeeds}</li>

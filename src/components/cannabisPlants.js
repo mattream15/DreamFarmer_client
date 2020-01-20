@@ -12,8 +12,9 @@ class CannabisPlants {
         this.varietyName = document.querySelector('varietyName')
         this.numberOfSeeds = document.querySelector('numberOfSeeds')
         this.growRoomId = document.querySelector('growRoomId')
-        this.newCannabisPlantSpecies = document.getElementById('new-cannabisPlant-species')
-        this.newCannabisPlantVarietyName = document.getElementById('new-cannabisPlant-varietyName')
+        this.newCannabisPlantSpecies = document.getElementById('species')
+        this.newCannabisPlantSpecies.addEventListener('change', this.handleSpeciesChange.bind(this))
+        this.newCannabisPlantVarietyName = document.getElementById('varietyName')
         this.newCannabisPlantNumberOfSeeds = document.getElementById('new-cannabisPlant-numberOfSeeds')
         this.newCannabisPlantGrowRoomId = document.getElementById('new-cannabisPlant-growRoomId')
         this.cannabisPlantForm = document.getElementById('new-cannabisPlant-form')
@@ -22,6 +23,15 @@ class CannabisPlants {
         (this))
         this.cannabisPlantsContainer.addEventListener('blur', this.updateCannabisPlant.bind(this), true)
     }
+
+    handleSpeciesChange(e) {        
+        if (e.target.value === 'Sativa') {
+            const sativaOptions = ['Sour Diesel', 'Casey Jones', 'Blue Dream']
+            const newOptions = sativaOptions.map(option => `<option>${option}</option>`)
+            this.newCannabisPlantVarietyName.innerHTML = newOptions.join('')
+        }
+    }
+
 
     createCannabisPlant(e) {
         e.preventDefault()
