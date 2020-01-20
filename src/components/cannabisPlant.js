@@ -13,6 +13,6 @@ class CannabisPlant {
       <li>Type: ${this.species}</li>
       <li>Variety Name: ${this.varietyName}</li>
       <li>Number of Seeds: ${this.numberOfSeeds}</li>
-      <li>Grow Room ID: ${this.growRoomId}</li><br>`  
+      <br>`  
     }
 }

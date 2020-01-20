@@ -19,9 +19,9 @@ class CannabisPlants {
         this.newCannabisPlantGrowRoomId = document.getElementById('growRoomId')
         this.cannabisPlantForm = document.getElementById('new-cannabisPlant-form')
         this.cannabisPlantForm.addEventListener('submit', this.createCannabisPlant.bind(this))
-        this.cannabisPlantsContainer.addEventListener('dblclick', this.handleCannabisPlantClick.bind
-        (this))
-        this.cannabisPlantsContainer.addEventListener('blur', this.updateCannabisPlant.bind(this), true)
+        // this.cannabisPlantsContainer.addEventListener('dblclick', this.handleCannabisPlantClick.bind
+        // (this))
+        // this.cannabisPlantsContainer.addEventListener('blur', this.updateCannabisPlant.bind(this), true)
     }
 
     handleSpeciesChange(e) {        
@@ -42,6 +42,7 @@ class CannabisPlants {
 
     createCannabisPlant(e) {
         e.preventDefault()
+        console.log(this)
         const value1 = this.newCannabisPlantSpecies.value
         const value2 = this.newCannabisPlantVarietyName.value
         const value3 = this.newCannabisPlantNumberOfSeeds.value
@@ -57,25 +58,25 @@ class CannabisPlants {
         })
     }
 
-    handleCannabisPlantClick(e) {
-        this.toggleCannabisPlant(e)
-    }
+    // handleCannabisPlantClick(e) {
+    //     this.toggleCannabisPlant(e)
+    // }
 
-    toggleCannabisPlant(e) {
-        const li = e.target
-        li.contentEditable = true
-        li.focus()
-        li.classList.add('editable')
-    }
+    // toggleCannabisPlant(e) {
+    //     const li = e.target
+    //     li.contentEditable = true
+    //     li.focus()
+    //     li.classList.add('editable')
+    // }
 
-    updateCannabisPlant(e) {
-        const li = e.target
-        li.contentEditable = false
-        li.classList.remove('editable')
-        const newValue = li.innerHTML
-        const id = li.dataset.id
-        this.adapter.updateCannabisPlant(newValue, id)
-    }
+    // updateCannabisPlant(e) {
+    //     const li = e.target
+    //     li.contentEditable = false
+    //     li.classList.remove('editable')
+    //     const newValue = li.innerHTML
+    //     const id = li.dataset.id
+    //     this.adapter.updateCannabisPlant(newValue, id)
+    // }
 
     fetchAndLoadCannabisPlants() {
         this.adapter

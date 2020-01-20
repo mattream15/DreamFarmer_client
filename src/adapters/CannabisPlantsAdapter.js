@@ -27,19 +27,19 @@ class CannabisPlantsAdapter {
         .then(res => res.json())
     }
 
-    updateCannabisPlant(value1, value2, value3, value4, id) {
-        const cannabisPlant = {
-            species: value1,
-            variety_name: value2,
-            number_of_seeds: value3,
-            grow_room_id: value4
-        }
-        return fetch(`${this.baseUrl}/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify({ cannabisPlant }),
-        }).then(res => res.json())
-    }
+    // updateCannabisPlant(value1, value2, value3, value4, id) {
+    //     const cannabisPlant = {
+    //         species: value1,
+    //         variety_name: value2,
+    //         number_of_seeds: value3,
+    //         grow_room_id: value4
+    //     }
+    //     return fetch(`${this.baseUrl}/${id}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             'content-type': 'application/json',
+    //         },
+    //         body: JSON.stringify({ cannabisPlant }),
+    //     }).then(res => res.json())
+    // }
 }
