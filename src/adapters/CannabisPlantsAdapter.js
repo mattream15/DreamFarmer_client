@@ -8,26 +8,31 @@ class CannabisPlantsAdapter {
         )
     }
 
-    createCannabisPlant(value1, value2, value3) {
+    createCannabisPlant(value1, value2, value3, value4) {
         const cannabisPlant = {
             species: value1,
-            varietyName: value2,
-            numberOfSeeds: value3
+            variety_name: value2,
+            number_of_seeds: value3,
+            grow_room_id: value4
         }
+        
         return fetch(this.baseUrl, {
             method: 'POST',
             headers: {
-                'content-type': 'application/json',
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
-            body: JSON.stringify({ cannabisPlant }),
-        }).then(res => res.json())
+            body: JSON.stringify({ cannabisPlant })
+        })
+        .then(res => res.json())
     }
 
-    updateCannabisPlant(value1, value2, value3, id) {
+    updateCannabisPlant(value1, value2, value3, value4, id) {
         const cannabisPlant = {
             species: value1,
-            varietyName: value2,
-            numberOfSeeds: value3
+            variety_name: value2,
+            number_of_seeds: value3,
+            grow_room_id: value4
         }
         return fetch(`${this.baseUrl}/${id}`, {
             method: 'PATCH',

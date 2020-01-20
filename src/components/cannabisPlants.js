@@ -11,9 +11,11 @@ class CannabisPlants {
         this.species = document.querySelector('species')
         this.varietyName = document.querySelector('varietyName')
         this.numberOfSeeds = document.querySelector('numberOfSeeds')
+        this.growRoomId = document.querySelector('growRoomId')
         this.newCannabisPlantSpecies = document.getElementById('new-cannabisPlant-species')
         this.newCannabisPlantVarietyName = document.getElementById('new-cannabisPlant-varietyName')
         this.newCannabisPlantNumberOfSeeds = document.getElementById('new-cannabisPlant-numberOfSeeds')
+        this.newCannabisPlantGrowRoomId = document.getElementById('new-cannabisPlant-growRoomId')
         this.cannabisPlantForm = document.getElementById('new-cannabisPlant-form')
         this.cannabisPlantForm.addEventListener('submit', this.createCannabisPlant.bind(this))
         this.cannabisPlantsContainer.addEventListener('dblclick', this.handleCannabisPlantClick.bind
@@ -26,12 +28,14 @@ class CannabisPlants {
         const value1 = this.newCannabisPlantSpecies.value
         const value2 = this.newCannabisPlantVarietyName.value
         const value3 = this.newCannabisPlantNumberOfSeeds.value
+        const value4 = this.newCannabisPlantGrowRoomId.value
 
-        this.adapter.createCannabisPlant(value1, value2, value3).then(cannabisPlant => {
+        this.adapter.createCannabisPlant(value1, value2, value3, value4).then(cannabisPlant => {
             this.cannabisPlants.push(new CannabisPlant(cannabisPlant))
             this.newCannabisPlantSpecies.value = ''
             this.newCannabisPlantVarietyName.value = ''
             this.newCannabisPlantNumberOfSeeds.value = ''
+            this.newCannabisPlantGrowRoomId.value = ''
             this.render()
         })
     }
