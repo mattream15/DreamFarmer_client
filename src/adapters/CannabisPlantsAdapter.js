@@ -8,12 +8,12 @@ class CannabisPlantsAdapter {
         )
     }
 
-    createCannabisPlant(value1, value2, value3, value4) {
+    createCannabisPlant(species, varietyName, numberOfSeeds, growRoomId) {
         const cannabisPlant = {
-            species: value1,
-            variety_name: value2,
-            number_of_seeds: value3,
-            grow_room_id: value4
+            species: species,
+            variety_name: varietyName,
+            number_of_seeds: numberOfSeeds,
+            grow_room_id: growRoomId
         }
         
         return fetch(this.baseUrl, {
@@ -43,3 +43,4 @@ class CannabisPlantsAdapter {
     //     }).then(res => res.json())
     // }
 }
+  

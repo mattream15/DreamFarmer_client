@@ -13,6 +13,7 @@ class CannabisPlant {
       <li>Type: ${this.species}</li>
       <li>Variety Name: ${this.varietyName}</li>
       <li>Number of Seeds: ${this.numberOfSeeds}</li>
+      <button data-id="${this.id}">Delete</button>
       <br>`  
     }
 }

@@ -8,13 +8,13 @@ class GrowRoomsAdapter {
         )
     }
 
-    createGrowRoom(value1, value2, value3, value4, value5) {
+    createGrowRoom(lightSource, nutrient, relativeHumidity, temperature, pH) {
         const growRoom = {
-            lightSource: value1,
-            nutrient: value2,
-            relativeHumidity: value3,
-            temperature: value4,
-            pH: value5
+            lightSource,
+            nutrient,
+            relativeHumidity,
+            temperature,
+            pH
         }
         return fetch(this.baseUrl, {
             method: 'POST',
