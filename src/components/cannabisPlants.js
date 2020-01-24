@@ -19,8 +19,7 @@ class CannabisPlants {
         this.newCannabisPlantGrowRoomId = document.getElementById('growRoomId')
         this.cannabisPlantForm = document.getElementById('new-cannabisPlant-form')
         this.cannabisPlantForm.addEventListener('submit', this.createCannabisPlant.bind(this))
-        this.cannabisPlantsContainer = document.querySelector('#cannabisPlants-Content')
-        this.cannabisPlantsContainer.addEventListener('click', 
+        this.cannabisPlantsContainer.addEventListener('click', this.deleteCannabisPlant.bind(this))
         // this.cannabisPlantsContainer.addEventListener('dblclick', this.handleCannabisPlantClick.bind
         // (this))
         // this.cannabisPlantsContainer.addEventListener('blur', this.updateCannabisPlant.bind(this), true)
@@ -28,7 +27,15 @@ class CannabisPlants {
 
     deleteCannabisPlant(e) {
         if (e.target.tagName == "BUTTON") {
-            e.target
+            const id = e.target.dataset.id
+            this.adapter.deleteCannabisPlant(id)
+            .then(job => {
+                const newCannabisPlants = this.cannabisPlants.filter(cannabisPlant => {
+                    return cannabisPlant.id != job.cannabisPlantId
+                })
+                this.cannabisPlants = newCannabisPlants
+                this.render()
+            })
         }
     }
 

@@ -27,6 +27,17 @@ class CannabisPlantsAdapter {
         .then(res => res.json())
     }
 
+    deleteCannabisPlant(id) {
+        return fetch (`${this.baseUrl}/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then(res => res.json())
+            
+    }
+
     // updateCannabisPlant(value1, value2, value3, value4, id) {
     //     const cannabisPlant = {
     //         species: value1,
